@@ -1,108 +1,17 @@
-@charset 'UTF-8';    /* 文字コードの指定 */
-
-@import 'https://fonts.googleapis.com/css?family=Abel';    /* Google Fonts用のCSSを読み込み */
-
-html
-{
-    font-size: 62.5%;
-}
-
-body
-{
-    font-family: '游ゴシック', YuGothic, 'メイリオ', Verdana, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-    font-size: 1.4rem;
-    line-height: 1.6;
-    letter-spacing: .1em;
-    color: #6b3f31;
-    background-color: #fdede4;
-}
-
-a
-{
-    text-decoration: none;
-
-    color: #6b3f31;
-}
-a:visited
-{
-    color: #6b3f31;
-}
-a:hover
-{
-    color: #6b3f31;
-}
-a:active
-{
-    color: #6b3f31;
-}
-a:hover
-{
-    text-decoration: underline;
-}
-
-.text-center
-{
+.text-center {
     text-align: center;
 }
-
-.block-center,
-section .container,
-#skills i
-{
-    display: block;
-
-   margin-right: auto;
-   margin-left: auto;
+.abel {
+    font-family: 'Abel', sans-serif; /* Google Fontsの指定 */
 }
 
-.abel,
-section h2,
-#skills h3,
-#works .works-box a .works-box-inner .button-readmore
-{
-    font-family: 'Abel', sans-serif;
-}
-
-.uppercase,
-section h2,
-#skills h3,
-#works .works-box a .works-box-inner .button-readmore
-{
-    text-transform: uppercase;
-}
-.button-contact
-{
-    font-size: 20px;
-    line-height: 0;
-    display: block;
-    float: right;
-    width: 20px;
-    height: 20px;
-    margin: 20px 20px 0 0;
-    padding: 10px;
-    text-align: center;
-    color: #6b3f31;
-    border: 2px solid #6b3f31;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
-}
-.button-contact:visited
-{
-    color: #6b3f31;
-}
-.button-contact:hover,
-.button-contact:active
-{
-    color: #6b3f31;
-    background-color: #4c4c4c;
-}
 
 header .profile
 {
-    clear: both;
+    clear: both; /* 上のメールボタンのfloatを解除 */
+
     width: 60%;
-    margin: 0 auto;
+    margin: 0 auto; /* ボックスを中央寄せ */
     padding: 60px 0;
 }
 header .site-title
@@ -113,13 +22,18 @@ header .site-title
 header .site-title span
 {
     font-size: 4.2rem;
-    display: block;
 
-    color: #6b3f31;
+    display: block;
+    color: #14c0c9;
+}
+.block-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 header .profile-icon
 {
-    margin: 50px auto;
+    margin: 30px auto;
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
@@ -130,24 +44,46 @@ header p
 }
 section
 {
-    padding: 60px 0;
+    padding: 60px 0; /* section要素の余白を上下60pxで揃える */
 }
 section .container
 {
-    width: 90%;
+    width: 100%; /* sectionの中のインナーボックスをウィンドウ幅に対して90%に */
 }
 section h2
 {
-    font-size: 3.2rem;
+    font-size: 3.2rem;/* section要素見出しを32pxで揃える */
+}
+.block-center,
+section .container
+#skills i
+{
+    display: block;
+    
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.abel,
+section h2
+{
+    font-family: 'Abel', sans-serif;
+}
+
+.uppercase,
+section h2
+{
+    text-transform: uppercase;
 }
 #skills
 {
-    background-color: #6b3f31;
+    background-color: #bea300;
 }
 #skills .container
 {
     display: -webkit-flex;
     display:         flex;
+
     justify-content: space-between;
 }
 #skills h2
@@ -164,6 +100,7 @@ section h2
             flex: 1;
     margin: 0px 10px;
     padding: 20px;
+
     -webkit-border-radius: 4px;
        -moz-border-radius: 4px;
             border-radius: 4px;
@@ -171,46 +108,65 @@ section h2
 }
 #skills i
 {
-    font-size: 4.5rem;
+    font-size: 3.4rem;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+            
     width: 80px;
     height: 80px;
-    margin-bottom: 5px;
-    padding-top: 15px;
+    margin-bottom: 10px;
+    padding-top: 12px;
+    
     text-align: center;
+
     color: #fff;
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
-    background-color: #bd6856;
+    background-color: #14c0c9;
+}
+.skill-box {
+    text-align: center;
 }
 #skills h3
 {
     font-size: 2.4rem;
     font-weight: bold;
+
     margin-bottom: 10px;
-    color: #6b3f31;
+
+    color: #14c0c9;
 }
 #works
 {
     padding-bottom: 0;
 }
+
 #works h2
 {
     margin-bottom: 50px;
 }
+
 #works .works-box
 {
     float: left;
+
     width: 33.33333%;
     height: 100%;
 }
 
+#works::after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
 #works .works-box a
 {
     position: relative;
+
     display: block;
 }
 #works .works-box a .works-box-inner
@@ -218,8 +174,11 @@ section h2
     position: absolute;
     top: 0;
     left: 0;
+
     display: none;
+
     height: 100%;
+
     color: #fff;
     background-color: rgba(0, 0, 0, .7);
 }
@@ -230,6 +189,7 @@ section h2
     right: 0;
     bottom: 0;
     left: 0;
+
     height: 40%;
     margin: auto;
     padding: 10px 20px;
@@ -238,152 +198,85 @@ section h2
 {
     font-size: 1.6rem;
     font-weight: bold;
+
     margin: 0 0 5px;
 }
 #works .works-box a .works-box-inner small
 {
     font-size: 1rem;
+
     display: block;
+
     margin-bottom: 15px;
 }
 #works .works-box a .works-box-inner .button-readmore
 {
     font-size: 1rem;
     font-weight: bold;
+
     display: block;
+
     width: 180px;
     margin: auto;
     padding: 5px 0;
+
     text-align: center;
+
     color: #fff;
     -webkit-border-radius: 4px;
        -moz-border-radius: 4px;
             border-radius: 4px;
-    background-color: #6b3f31;
-}
-#works .works-box a .works-box-inner .button-readmore:hover
-{
-    background-color: #6b3f31;
-}
-#works .works-box a:hover .works-box-inner
-{
-    display: block;
-    width: 100%;
+    background-color: #14c0c9;
 }
 #works .works-box img
 {
     display: block;
+
     max-width: 100%;
 }
-
-#works::after
-{
-    display: block;
-    clear: both;
-    content: '';
-}
-#works
-{
-    padding-bottom: 0;
-}
-#works h2
-{
-    margin-bottom: 50px;
-}
-#works .works-box
-{
-    float: left;
-    width: 33.33333%;
-    height: 100%;
-}
-
-#works .works-box a
-{
-    position: relative;
-    display: block;
-}
-#works .works-box a .works-box-inner
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    height: 100%;
-    color: #fff;
-    background-color: #6b3f31;
-}
-#works .works-box a .works-box-inner div
-{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 40%;
-    margin: auto;
-    padding: 10px 20px;
-}
-#works .works-box a .works-box-inner h3
-{
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin: 0 0 5px;
-}
-#works .works-box a .works-box-inner small
-{
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 15px;
-}
+.abel,
+section h2,
+#skills h3,
 #works .works-box a .works-box-inner .button-readmore
 {
-    font-size: 1rem;
-    font-weight: bold;
-    display: block;
-    width: 180px;
-    margin: auto;
-    padding: 5px 0;
-    text-align: center;
-    color: #fff;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
-    background-color: #6b3f31;
+    font-family: 'Abel', sans-serif;
 }
-#works .works-box a .works-box-inner .button-readmore:hover
+
+.uppercase,
+section h2,
+#skills h3,
+#works .works-box a .works-box-inner .button-readmore
 {
-    background-color: #e3d7a3;
+    text-transform: uppercase;
 }
 #works .works-box a:hover .works-box-inner
 {
     display: block;
+
     width: 100%;
 }
-#works .works-box img
-{
-    display: block;
-    max-width: 100%;
-}
 
-#works::after
+#works .works-box a .works-box-inner .button-readmore:hover
 {
-    display: block;
-    clear: both;
-    content: '';
+    background-color: #0f949b;
 }
 #contact ul
 {
     margin-top: 60px;
+
     text-align: center;
 }
 #contact ul li
 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+
     display: inline-block;
+
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     margin-right: 20px;
+
     text-align: center;
     vertical-align: top;
 }
@@ -394,35 +287,45 @@ section h2
 #contact ul .github,
 #contact ul .skype
 {
-    font-size: 3.2rem;
+    font-size: 2.5rem;
+}
+#contact ul .mail i
+{
+    margin-top: 4px;
+}
+#contact ul .skype i
+{
+    margin-top: 5px;
+    margin-right: 1px;
 }
 #contact ul .github i
 {
-    margin-left: 2px;
+    margin-left: 1px;
+    margin-top: 4px;
 }
 #contact ul a
 {
     display: block;
+
     width: 50px;
     height: 50px;
+
     color: #fff;
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
-    background-color: #6b3f31;
+    background-color: #14c0c9;
 }
 #contact ul a:hover
 {
-    background-color: #e3d7a3;
+    background-color: #0f949b;
 }
 footer
 {
     padding: 10px 0;
-    text-align: center;
-    color: #fff;
-    background-color: #6b3f31;
-}
 
-#SkypeButton_Call_torunkmr1_1{
-    
+    text-align: center;
+
+    color: #fff;
+    background-color: #bea300;
 }
